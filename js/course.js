@@ -6,7 +6,8 @@ ans = document.getElementById('ans');
 next = document.getElementById('next');
 correct_ans = document.getElementById('correct_ans');
 wrong_ans = document.getElementById('wrong_ans');
-
+disabled = document.getElementsByClassName('disabled');
+console.log(disabled);
 var resultArray = [];
 var count = 0;
 
@@ -71,6 +72,11 @@ function analyze() {
       next.setAttribute('data-bs-target', '#resultModal');
       correct_ans.innerHTML = correct_per + ' %';
       wrong_ans.innerHTML = wrong_per + ' %';
+
+      if (correct_ans > 80) {
+        disabled.className = "enabled";
+        console.log(disabled);
+      }
     }
   }
   count++;
